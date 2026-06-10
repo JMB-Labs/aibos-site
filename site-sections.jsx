@@ -2,6 +2,7 @@
 const { Logo, Button, Badge, Stat, Card, PixelMark } = window.AIBOSDesignSystem_087750;
 
 const MAXW = 1080;
+const BOOK_HREF = 'mailto:mlcamero131@gmail.com?subject=AIBOS%20walkthrough';
 
 function Nav() {
   return (
@@ -9,13 +10,12 @@ function Nav() {
       <div style={{ maxWidth: MAXW, margin: '0 auto', height: 64, padding: '0 24px', display: 'flex', alignItems: 'center', gap: 28 }}>
         <Logo size={22} />
         <nav style={{ display: 'flex', gap: 24, marginLeft: 16 }}>
-          {['Product', 'Pricing', 'Manifesto'].map((l) => (
-            <a key={l} href="#" style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', fontWeight: 500 }}>{l}</a>
+          {[['Special Agents', '#agents'], ['The math', '#math'], ['How it works', '#how']].map(([l, href]) => (
+            <a key={l} href={href} style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', fontWeight: 500 }}>{l}</a>
           ))}
         </nav>
         <div style={{ marginLeft: 'auto', display: 'flex', gap: 10, alignItems: 'center' }}>
-          <a href="#" style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', fontWeight: 500 }}>Sign in</a>
-          <Button size="sm">Book a walkthrough</Button>
+          <a href={BOOK_HREF} style={{ textDecoration: 'none' }}><Button size="sm">Book a walkthrough</Button></a>
         </div>
       </div>
     </header>
@@ -29,17 +29,17 @@ function Hero() {
       <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(var(--gray-200) 1.2px, transparent 1.2px)', backgroundSize: '22px 22px', maskImage: 'linear-gradient(to bottom, black, transparent 70%)', WebkitMaskImage: 'linear-gradient(to bottom, black, transparent 70%)', opacity: 0.7 }} />
       <div style={{ position: 'relative', maxWidth: MAXW, margin: '0 auto', padding: '84px 24px 72px', textAlign: 'center' }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 22 }}>
-          <Badge variant="neutral" dot>For Metro Manila laundromats</Badge>
+          <Badge variant="neutral" dot>Special Agents — live in Metro Manila businesses today</Badge>
         </div>
         <h1 style={{ fontSize: 'clamp(38px, 6vw, 68px)', fontWeight: 600, letterSpacing: '-0.03em', lineHeight: 1.04 }}>
-          Own your software.<br />Run it on AI.
+          Software you don't operate.<br />Staff you don't hire.
         </h1>
         <p style={{ maxWidth: 600, margin: '22px auto 0', fontSize: 'var(--text-md)', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
-          AIBOS replaces your entire software stack with one custom system — POS, payroll, operations, owner dashboard, and website — run for you by Special Agents. It's yours to keep.
+          AIBOS gives your business a Special Agent — one AI staffer that runs your POS, payroll, operations, and website on a custom system you own outright. Two are already on the job. Yours is next.
         </p>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 30 }}>
-          <Button size="lg">Book a walkthrough</Button>
-          <Button size="lg" variant="secondary">See what it replaces</Button>
+          <a href="#agents" style={{ textDecoration: 'none' }}><Button size="lg">Meet the agents</Button></a>
+          <a href={BOOK_HREF} style={{ textDecoration: 'none' }}><Button size="lg" variant="secondary">Book a walkthrough</Button></a>
         </div>
         <div style={{ marginTop: 18, fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', color: 'var(--text-tertiary)', letterSpacing: '.04em' }}>
           NO PER-SEAT FEES · NO LOCK-IN · YOU OWN THE DATABASE
@@ -97,7 +97,7 @@ function ProductPreview() {
 
 function Facts() {
   return (
-    <section style={{ background: 'var(--gray-950)', color: 'var(--gray-100)' }}>
+    <section id="math" style={{ background: 'var(--gray-950)', color: 'var(--gray-100)' }}>
       <div style={{ maxWidth: MAXW, margin: '0 auto', padding: '80px 24px' }}>
         <div style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--green-400)', textAlign: 'center' }}>The math</div>
         <h2 style={{ textAlign: 'center', fontSize: 'clamp(28px,4vw,40px)', fontWeight: 600, letterSpacing: '-0.02em', marginTop: 14, color: 'var(--gray-50)' }}>
@@ -208,12 +208,12 @@ function AgentRow({ a }) {
 
 function Agents() {
   return (
-    <section>
+    <section id="agents" style={{ borderBottom: '1px solid var(--border-subtle)' }}>
       <div style={{ maxWidth: MAXW, margin: '0 auto', padding: '80px 24px' }}>
         <div style={{ textAlign: 'center', maxWidth: 620, margin: '0 auto 44px' }}>
-          <div className="aibos-eyebrow">Special Agents</div>
+          <div className="aibos-eyebrow">The roster</div>
           <h2 style={{ fontSize: 'clamp(28px,4vw,42px)', fontWeight: 600, letterSpacing: '-0.025em', marginTop: 12, lineHeight: 1.08 }}>
-            Software you don't operate.<br />Staff you don't hire.
+            Meet the Special Agents.
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-md)', marginTop: 16, lineHeight: 1.55 }}>
             You don't log in to run your business — you deploy a Special Agent and it runs the day for you.
@@ -231,6 +231,39 @@ function Agents() {
   );
 }
 
+function HowItWorks() {
+  const steps = [
+    ['hammer', 'We build your AIBOS', 'One custom system for your business — POS, operations, payroll, dashboard, website. No off-the-shelf templates.'],
+    ['user-check', 'We deploy your Special Agent', 'Named like staff, trained on how your shop actually runs — your prices, your suppliers, your rhythm.'],
+    ['shield-check', 'You stay in charge', 'The agent drafts; you approve. Payments, supplier orders, anything that leaves the building waits for your OK.'],
+    ['key-round', 'You own all of it', 'The code, the data, the system. No per-seat fees, no lock-in. Live in days, not months.'],
+  ];
+  return (
+    <section id="how" style={{ background: 'var(--surface-card)', borderBottom: '1px solid var(--border-subtle)' }}>
+      <div style={{ maxWidth: MAXW, margin: '0 auto', padding: '80px 24px' }}>
+        <div style={{ textAlign: 'center', maxWidth: 620, margin: '0 auto 44px' }}>
+          <div className="aibos-eyebrow">How it works</div>
+          <h2 style={{ fontSize: 'clamp(28px,4vw,40px)', fontWeight: 600, letterSpacing: '-0.02em', marginTop: 12 }}>
+            From handshake to hired.
+          </h2>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18 }}>
+          {steps.map(([ic, title, body], i) => (
+            <Card key={title} padding="md">
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: 'var(--text-tertiary)' }}>0{i + 1}</span>
+                <Icon name={ic} size={17} style={{ color: 'var(--text-secondary)' }} />
+              </div>
+              <div style={{ fontSize: 'var(--text-base)', fontWeight: 600, marginTop: 12 }}>{title}</div>
+              <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', lineHeight: 1.5, marginTop: 7 }}>{body}</p>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function CTA() {
   return (
     <section style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--surface-card)' }}>
@@ -240,8 +273,8 @@ function CTA() {
           We set up a working AIBOS for your business — POS, operations, payroll, site — and let your Special Agent run a real day. If it doesn't earn its keep, you owe nothing.
         </p>
         <div style={{ marginTop: 28, display: 'flex', gap: 12, justifyContent: 'center' }}>
-          <Button size="lg">Book a walkthrough</Button>
-          <Button size="lg" variant="ghost" iconRight={<Icon name="arrow-right" size={18} />}>Read the manifesto</Button>
+          <a href={BOOK_HREF} style={{ textDecoration: 'none' }}><Button size="lg">Book a walkthrough</Button></a>
+          <a href="#agents" style={{ textDecoration: 'none' }}><Button size="lg" variant="ghost" iconRight={<Icon name="arrow-right" size={18} />}>See the agents again</Button></a>
         </div>
       </div>
     </section>
@@ -255,8 +288,8 @@ function Footer() {
         <Logo size={18} />
         <span style={{ fontSize: 12, color: 'var(--text-tertiary)' }}>by JMB Labs · Metro Manila</span>
         <div style={{ marginLeft: 'auto', display: 'flex', gap: 20 }}>
-          {['Product', 'Pricing', 'Manifesto', 'Contact'].map((l) => (
-            <a key={l} href="#" style={{ fontSize: 12, color: 'var(--text-secondary)' }}>{l}</a>
+          {[['Special Agents', '#agents'], ['The math', '#math'], ['How it works', '#how'], ['Contact', BOOK_HREF]].map(([l, href]) => (
+            <a key={l} href={href} style={{ fontSize: 12, color: 'var(--text-secondary)' }}>{l}</a>
           ))}
         </div>
       </div>
@@ -270,8 +303,9 @@ function Site() {
     <div style={{ fontFamily: 'var(--font-sans)', background: 'var(--surface-page)' }}>
       <Nav />
       <Hero />
-      <Facts />
       <Agents />
+      <Facts />
+      <HowItWorks />
       <CTA />
       <Footer />
     </div>
