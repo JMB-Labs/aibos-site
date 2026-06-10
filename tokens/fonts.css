@@ -1,0 +1,11 @@
+/* ============================================================
+   AIBOS — Webfonts
+   Sans:  Geist        (UI, body, headings)
+   Mono:  Geist Mono   (wordmark, eyebrows, data, facts, code)
+   ------------------------------------------------------------
+   NOTE: fonts are currently delivered via the Google Fonts CDN.
+   For a fully self-hosted system, replace this @import with local
+   @font-face rules pointing at binaries under /assets/fonts/.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600;700&display=swap');

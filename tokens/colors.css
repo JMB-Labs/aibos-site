@@ -1,0 +1,98 @@
+/* ============================================================
+   AIBOS — Color tokens
+   System: near-black ink + warm neutrals + a single signal green
+   ("the agent — one cell awake"). No purple. Used sparingly.
+   ============================================================ */
+
+:root {
+  /* ---- Warm neutral ramp (the structural palette) ---- */
+  --gray-50:  #FAFAF8;
+  --gray-100: #F3F3F0;
+  --gray-150: #ECEBE7;
+  --gray-200: #E2E1DB;
+  --gray-300: #D0CFC8;
+  --gray-400: #ABA99F;
+  --gray-500: #84827A;
+  --gray-600: #605E57;
+  --gray-700: #46443F;
+  --gray-800: #2B2A26;
+  --gray-900: #1A1815;
+  --gray-950: #0F0E0C;
+
+  --white: #FFFFFF;
+  --black: #000000;
+
+  /* ---- Signal green (the accent — the awake cell) ---- */
+  --green-50:  #E7FAF0;
+  --green-100: #C6F2DA;
+  --green-200: #93E6BB;
+  --green-300: #57D695;
+  --green-400: #25C277;
+  --green-500: #10A862;
+  --green-600: #0C8A50;
+  --green-700: #0A6D40;
+  --green-800: #0A5634;
+  --green-900: #093F27;
+
+  /* ---- Semantic status ---- */
+  --red-50:   #FDECEC;
+  --red-500:  #E5484D;
+  --red-600:  #CE2C31;
+  --red-700:  #A81E22;
+
+  --amber-50:  #FBF1DC;
+  --amber-500: #D9930B;
+  --amber-600: #B87708;
+
+  --blue-50:  #E9F1FE;
+  --blue-500: #3B7DEF;
+  --blue-600: #2A63CC;
+
+  /* ============================================================
+     SEMANTIC ALIASES — reference these in product code, not raw ramp
+     ============================================================ */
+
+  /* Brand accent — the dot. Use sparingly: status, focus, key CTAs. */
+  --accent:          var(--green-500);
+  --accent-strong:   var(--green-600);
+  --accent-stronger: var(--green-700);
+  --accent-subtle:   var(--green-50);
+  --accent-border:   var(--green-200);
+
+  /* Text */
+  --text-primary:    var(--gray-900);
+  --text-secondary:  var(--gray-600);
+  --text-tertiary:   var(--gray-500);
+  --text-disabled:   var(--gray-400);
+  --text-inverse:    var(--gray-50);
+  --text-accent:     var(--green-700);
+  --text-on-accent:  var(--white);
+
+  /* Surfaces */
+  --surface-page:    var(--gray-50);
+  --surface-card:    var(--white);
+  --surface-sunken:  var(--gray-100);
+  --surface-hover:   var(--gray-100);
+  --surface-active:  var(--gray-150);
+  --surface-inverse: var(--gray-950);
+
+  /* Borders / hairlines (a primary structural device) */
+  --border-subtle:   var(--gray-200);
+  --border-default:  var(--gray-300);
+  --border-strong:   var(--gray-400);
+  --border-inverse:  rgba(255,255,255,0.12);
+
+  /* Focus ring */
+  --focus-ring:      var(--green-400);
+
+  /* Status semantics */
+  --success:         var(--green-600);
+  --success-subtle:  var(--green-50);
+  --warning:         var(--amber-500);
+  --warning-subtle:  var(--amber-50);
+  --danger:          var(--red-500);
+  --danger-strong:   var(--red-600);
+  --danger-subtle:   var(--red-50);
+  --info:            var(--blue-500);
+  --info-subtle:     var(--blue-50);
+}

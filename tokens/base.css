@@ -1,0 +1,45 @@
+/* ============================================================
+   AIBOS — Base layer
+   Minimal reset + element defaults wired to tokens.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--body-size);
+  line-height: var(--body-leading);
+  font-weight: var(--weight-regular);
+  color: var(--text-primary);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'cv01', 'ss01';
+}
+
+h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: var(--heading-weight); letter-spacing: var(--heading-track); line-height: var(--heading-leading); color: var(--text-primary); }
+p { margin: 0; text-wrap: pretty; }
+
+a { color: inherit; text-decoration: none; }
+
+code, kbd, samp, pre { font-family: var(--font-mono); }
+
+button, input, select, textarea { font: inherit; color: inherit; }
+
+::selection { background: var(--green-200); color: var(--gray-950); }
+
+:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+
+/* Utility: mono eyebrow / label */
+.aibos-eyebrow {
+  font-family: var(--eyebrow-font);
+  font-size: var(--eyebrow-size);
+  font-weight: var(--eyebrow-weight);
+  letter-spacing: var(--eyebrow-track);
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}

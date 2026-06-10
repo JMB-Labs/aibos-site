@@ -1,0 +1,19 @@
+/* ============================================================
+   AIBOS — Motion
+   Quick, mechanical, confident. Short durations, no bounce,
+   no decorative loops. Movement should feel like a system
+   responding, not an animation playing.
+   ============================================================ */
+
+:root {
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);     /* @kind other */
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);  /* @kind other */
+  --ease-in:       cubic-bezier(0.4, 0, 1, 1);      /* @kind other */
+
+  --duration-instant: 80ms;  /* @kind other */
+  --duration-fast:    120ms; /* @kind other */
+  --duration-base:    180ms; /* @kind other */
+  --duration-slow:    260ms; /* @kind other */
+
+  --transition-control: all var(--duration-fast) var(--ease-standard);
+}

@@ -1,0 +1,22 @@
+/* ============================================================
+   AIBOS — Radii
+   Crisp, restrained corners. The pixel-grid heritage means we
+   never go pill-soft on structural surfaces; --radius-full is
+   reserved for dots, avatars, and switches.
+   ============================================================ */
+
+:root {
+  --radius-none: 0px;
+  --radius-xs:   3px;
+  --radius-sm:   5px;
+  --radius-md:   7px;
+  --radius-lg:   10px;
+  --radius-xl:   14px;
+  --radius-2xl:  20px;
+  --radius-full: 9999px;
+
+  /* Semantic */
+  --radius-control: var(--radius-md);   /* buttons, inputs */
+  --radius-card:    var(--radius-lg);   /* cards, panels */
+  --radius-surface: var(--radius-xl);   /* modals, large panels */
+}
