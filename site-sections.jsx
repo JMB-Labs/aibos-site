@@ -10,7 +10,7 @@ function Nav() {
       <div style={{ maxWidth: MAXW, margin: '0 auto', height: 64, padding: '0 24px', display: 'flex', alignItems: 'center', gap: 28 }}>
         <Logo size={22} />
         <nav style={{ display: 'flex', gap: 24, marginLeft: 16 }}>
-          {[['Special Agents', '#agents'], ['The math', '#math'], ['How it works', '#how']].map(([l, href]) => (
+          {[['Special Agents', '#agents'], ['How it works', '#how']].map(([l, href]) => (
             <a key={l} href={href} style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', fontWeight: 500 }}>{l}</a>
           ))}
         </nav>
@@ -92,29 +92,6 @@ function ProductPreview() {
         </div>
       </div>
     </div>
-  );
-}
-
-function Facts() {
-  return (
-    <section id="math" style={{ background: 'var(--gray-950)', color: 'var(--gray-100)' }}>
-      <div style={{ maxWidth: MAXW, margin: '0 auto', padding: '80px 24px' }}>
-        <div style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--green-400)', textAlign: 'center' }}>The math</div>
-        <h2 style={{ textAlign: 'center', fontSize: 'clamp(28px,4vw,40px)', fontWeight: 600, letterSpacing: '-0.02em', marginTop: 14, color: 'var(--gray-50)' }}>
-          You're already paying for software.<br />You just don't own any of it.
-        </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 1, marginTop: 48, background: 'rgba(255,255,255,0.08)', borderRadius: 'var(--radius-xl)', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)' }}>
-          <div style={{ background: 'var(--gray-950)', padding: '36px 32px' }}>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-2xl)', fontWeight: 300, color: 'var(--gray-500)', textDecoration: 'line-through', textDecorationColor: 'var(--red-500)' }}>₱15,000+ / mo</div>
-            <div style={{ fontSize: 'var(--text-base)', color: 'var(--gray-400)', marginTop: 10, lineHeight: 1.5 }}>4–5 separate tools — POS, bookkeeping, payroll, scheduling, a site builder — that don't talk to each other. Rented forever.</div>
-          </div>
-          <div style={{ background: 'var(--gray-950)', padding: '36px 32px' }}>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-2xl)', fontWeight: 600, color: 'var(--green-400)' }}>₱0 / mo</div>
-            <div style={{ fontSize: 'var(--text-base)', color: 'var(--gray-300)', marginTop: 10, lineHeight: 1.5 }}>No software retainer. You own the system and pay only for your domain and database. Your agents do the rest.</div>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }
 
@@ -288,7 +265,7 @@ function Footer() {
         <Logo size={18} />
         <span style={{ fontSize: 12, color: 'var(--text-tertiary)' }}>by JMB Labs · Metro Manila</span>
         <div style={{ marginLeft: 'auto', display: 'flex', gap: 20 }}>
-          {[['Special Agents', '#agents'], ['The math', '#math'], ['How it works', '#how'], ['Contact', BOOK_HREF]].map(([l, href]) => (
+          {[['Special Agents', '#agents'], ['How it works', '#how'], ['Contact', BOOK_HREF]].map(([l, href]) => (
             <a key={l} href={href} style={{ fontSize: 12, color: 'var(--text-secondary)' }}>{l}</a>
           ))}
         </div>
@@ -304,7 +281,6 @@ function Site() {
       <Nav />
       <Hero />
       <Agents />
-      <Facts />
       <HowItWorks />
       <CTA />
       <Footer />
